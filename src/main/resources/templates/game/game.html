@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header">
+<body>
+
+<div class="wrapper" style="margin: 0; ">
+
+    <span th:text="${rate.getCurrency()}"></span>
+
+    <br>
+    <br>
+    <span th:text="${info}"></span>
+
+    <a th:href="@{'/change'}" style="text-decoration: none">
+        <button type="button">Zmień walutę</button>
+    </a>
+
+    <form th:method="get" th:action="@{'/'+ ${formAction}}">
+        <label for="answer"> Wpisz wartość
+            <input id="answer" type="text" name="answer">
+        </label>
+        <button type="submit">Sprawdź</button>
+    </form>
+
+    <h5>Próba numer <span th:text="${counter}"></span>
+    </h5>
+
+</div>
+</body>
+</html>

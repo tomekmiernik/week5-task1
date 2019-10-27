@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header">
+<body>
+
+<div class="wrapper" style="margin: 0;">
+    <div class="container" style="display: flex; align-items: center; justify-content: center;">
+        <table>
+            <thead>
+            <tr>
+                <th>Podgląd</th>
+                <th>Autor</th>
+                <th>Link do pobrania</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="p : ${pictures}">
+                <td>
+                    <a>
+                        <img th:src="${p.getDownloadUrl()}" th:width="75px" th:height="65px" alt="image">
+                    </a>
+                </td>
+                <td th:text="${p.getAuthor()}"></td>
+                <td>
+                    <a th:href="@{${p.getDownloadUrl()}}"
+                       th:text="${p.getDownloadUrl()}">
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <br>
+    <div style="display: flex; align-items: center; justify-content: center; ">
+        <a th:href="@{'/pictures'}"
+           style=" text-decoration: none; grid-column-gap: 10%;">
+            <button type="button">Następne</button>
+        </a>
+        <a th:href="@{'/'}"
+           style="text-decoration: none; grid-column-gap: 10%;">
+            <button type="button">Powrót</button>
+        </a>
+    </div>
+</div>
+</body>
+</html>

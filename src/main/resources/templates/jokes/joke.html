@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header">
+<body>
+
+<div class="wrapper" style="margin: 0;">
+    <div th:replace="fragments/setup :: setup"></div>
+    <a style="display: flex; align-items: center; justify-content: center; text-decoration: none" th:href="@{'/answer'}">
+        <button type="button">Get Answer</button>
+    </a>
+    <br>
+    <br>
+    <br>
+    <a style="display: flex; align-items: center; justify-content: center; text-decoration: none" th:href="@{'/'}">
+    <button type="button">The End</button>
+    </a>
+</div>
+</body>
+</html>
