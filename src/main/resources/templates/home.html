@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header">
+<body>
+
+<div class="wrapper" style="margin: 0;">
+
+    <h4 style="display: flex; justify-content: center; align-items: center">
+        Kurs Spring Boot 2 - praca domowa tydzień 5
+    </h4>
+    <div style="display: flex; align-items: center; justify-content: center;">
+        <a  th:href="@{'/joke'}"style="text-decoration: none">
+            <button type="button">Kawały</button>
+        </a>
+
+        <a  th:href="@{'/pictures'}"style="text-decoration: none">
+            <button type="button">Losowe zdjęcia</button>
+        </a>
+
+        <a  th:href="@{'/game'}"style="text-decoration: none">
+            <button type="button">Gra walutowa</button>
+        </a>
+    </div>
+
+</div>
+</body>
+</html>
